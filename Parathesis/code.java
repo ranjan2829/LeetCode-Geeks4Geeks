@@ -10,9 +10,17 @@ class Solution {
                     return false;
                 }
                 char top=stack.peek();
+                if((c == ')' && top == '(') || (c == ']' && top == '[') || (c == '}' && top == '{')){
+                    stack.pop();
+                }
+                else{
+                    return false;
+                }
             }
+            
 
         }
+        return stack.isEmpty();
 
         
     }
