@@ -8,7 +8,7 @@ class Solution{
         for(int k=0;i<2*N;k++){
             int i=0;
             while(i<=k){
-                int j=k-1;
+                int j=k-i;
                 if(i<N && j<N){
                     ans.add(A[i][j]);
                 }
