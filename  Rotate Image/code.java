@@ -12,11 +12,11 @@ class solution{
 
             }
         }
-        for(inti=0;i<n;i++){
-            for(intj=i;j<n;j++){
+        for(int i=0;i<n;i++){
+            for(int j=i;j<n;j++){
                 int temp= matrix[i][j];
                 matrix[j][i]=temp;
-                
+
             }
         }
     }
