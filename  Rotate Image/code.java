@@ -1,7 +1,7 @@
 class solution{
     public void rotate(int[][] matrix){
         int n=matrix.length;
-        for(int i=0;i<n-1;i++){
+        for(int i=0;i<n;i++){
             int a=0;
             int b=n-1;
             while(a<=b){
