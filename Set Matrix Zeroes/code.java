@@ -14,7 +14,7 @@ class Solution {
         }
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                if (zeroRows[i] || zeroCols[j]) {
+                if (zeror[i] || zeroc[j]) {
                     matrix[i][j] = 0;
                 }
             }
