@@ -3,9 +3,20 @@ class Solution {
         if(board.length==0||board[0].length==0){
             return;
         }
+        //in this we are gonna implement the boundary dfs algo
         int row=board.length;
         int col=board[0].length;
-        boolean visited[][] = new boolean[row][col];
+        for(int i=0;i<row;i++){
+            if(board[i][0]=='O'){
+                boundarydfs(i,0,board);
+            }
+            if(board[i][col-1]=='O'){
+                boundarydfs(i,col-1,board);
+            }
+
+        }
+        
+        
         for(int i=0;i<row;i++){
             for(int j=0;j<col;j++){
                 if(board[i][j]=='O' && searchdfs(i,j,board)){
