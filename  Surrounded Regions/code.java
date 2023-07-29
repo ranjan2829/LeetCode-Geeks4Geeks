@@ -15,11 +15,11 @@ class Solution {
             }
 
         }
-        
+
         
         for(int i=0;i<row;i++){
             for(int j=0;j<col;j++){
-                if(board[i][j]=='O' && searchdfs(i,j,board)){
+                if(board[i][j]=='O' && boundarydfs(i,j,board)){
                     board[i][j]='X';
 
                 }
@@ -27,15 +27,15 @@ class Solution {
         }
         
     }
-    private boolean searchdfs(int i, int j , char[][] board){
+    private boolean boundarydfs(int i, int j , char[][] board){
         if(i<0||i>=board.length||j<0||j>=board[i].length||visited[i][j]){
             return false;
         }
         visited[i][j]=true;
-        if(searchdfs(i+1, j, board)||
-           searchdfs(i-1, j, board)||
-           searchdfs(i, j+1, board)||
-           searchdfs(i, j-1, board))
+        if(boundarydfs(i+1, j, board)||
+           boundarydfs(i-1, j, board)||
+           boundarydfs(i, j+1, board)||
+           boundarydfs(i, j-1, board))
         {
             return true;
         }
