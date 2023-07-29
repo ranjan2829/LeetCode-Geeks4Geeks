@@ -15,6 +15,14 @@ class Solution {
             }
 
         }
+        for(int j=0;j<col;j++){
+            if(board[0][j]=='O'){
+                boundarydfs(0, j, board);
+            }
+            if(board[row-1][j]=='O'){
+                boundarydfs(row-1, j, board);
+            }
+        }
 
         
         for(int i=0;i<row;i++){
