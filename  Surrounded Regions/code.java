@@ -27,27 +27,25 @@ class Solution {
         
         for(int i=0;i<row;i++){
             for(int j=0;j<col;j++){
-                if(board[i][j]=='O' && boundarydfs(i,j,board)){
+                if(board[i][j]=='O'){
                     board[i][j]='X';
 
+                }
+                else if(board[i][j]=='*'){
+                    board[i][j]='O';
                 }
             }
         }
         
     }
-    private boolean boundarydfs(int i, int j , char[][] board){
-        if(i<0||i>=board.length||j<0||j>=board[i].length||visited[i][j]){
-            return false;
+    private void boundarydfs(int i, int j , char[][] board){
+        if(i<0||i>board.length||j<0||j>=board[0].length){
+            return;
         }
-        visited[i][j]=true;
-        if(boundarydfs(i+1, j, board)||
-           boundarydfs(i-1, j, board)||
-           boundarydfs(i, j+1, board)||
-           boundarydfs(i, j-1, board))
-        {
-            return true;
+        if(board[i][j]=='*'){
+            board[i][j]='O';
         }
-        return false;
+
     }
     
 }
