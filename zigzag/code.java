@@ -9,8 +9,25 @@ class Solution {
         boolean down=false;
         for(char c:s.toCharArray()){
             board[row][col]=c;
+            if(row==0||row==numRows-1){
+                down=!down;
+
+            }
+            row+=down?1:-1;
+            col++;
+
 
         }
+        StringBuilder sb=new StringBuilder();
+        for (char[] arr:board){
+            for(char c: arr){
+                if(c!='\0'){
+                    sb.append(c);
+                }
+            }
+        }
+        return sb.toString();
+
 
         
         
